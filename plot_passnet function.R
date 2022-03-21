@@ -298,3 +298,9 @@ plot_passnet <- function(eventData, dataType = "statsbomb",
   }
   return(plot_passnet)
 }
+
+plot_passnet(eventData = optadata, dataType = "opta", team_name = "Bayern", theme = "dark")
+
+# Save
+
+ggsave("test.png", bg = "#0d1117", width = 2400, height = 1900, units = "px")
