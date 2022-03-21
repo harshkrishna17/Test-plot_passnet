@@ -25,30 +25,30 @@ optadata <- optadata %>%
                               playerId == "29400" ~ "Robert Lewandowski",
                               playerId == "29809" ~ "Jean-Eric Maxim Choupo-Moting",
                               playerId == "35506" ~ "Sven Ulreich",
-                              playerId == "37099" ~ "Thomas Müller",
+                              playerId == "37099" ~ "Thomas MÃ¼ller",
                               playerId == "92051" ~ "Marcel Sabitzer",
                               playerId == "104747" ~ "Bouna Sarr",
                               playerId == "119501" ~ "Serge Gnabry",
                               playerId == "125883" ~ "Kingsley Coman",
-                              playerId == "129983" ~ "Niklas Süle",
+                              playerId == "129983" ~ "Niklas SÃ¼le",
                               playerId == "134894" ~ "Corentin Tolisso",
-                              playerId == "139186" ~ "Lucas Hernández",
-                              playerId == "144711" ~ "Leroy Sané",
+                              playerId == "139186" ~ "Lucas HernÃ¡ndez",
+                              playerId == "144711" ~ "Leroy SanÃ©",
                               playerId == "259648" ~ "Benjamin Pavard",
                               playerId == "283323" ~ "Joshua Kimmich",
-                              playerId == "301024" ~ "Maximilian Wöber",
+                              playerId == "301024" ~ "Maximilian WÃ¶ber",
                               playerId == "302812" ~ "Rasmus Kristensen",
                               playerId == "323148" ~ "Marc Roca",
                               playerId == "327721" ~ "Dayot Upamecano",
                               playerId == "342489" ~ "Omar Richards",
-                              playerId == "342549" ~ "Christian Früchtl",
+                              playerId == "342549" ~ "Christian FrÃ¼chtl",
                               playerId == "346744" ~ "Antoine Bernede",
                               playerId == "354072" ~ "Oumar Solet",
-                              playerId == "369480" ~ "Nicolás Capaldo",
+                              playerId == "369480" ~ "NicolÃ¡s Capaldo",
                               playerId == "371012" ~ "Brenden Aaronson",
                               playerId == "376090" ~ "Noah Okafor",
                               playerId == "382492" ~ "Tanguy Nianzou",
-                              playerId == "383689" ~ "Philipp Köhn",
+                              playerId == "383689" ~ "Philipp KÃ¶hn",
                               playerId == "392645" ~ "Mohamed Camara",
                               playerId == "392646" ~ "Karim Adeyemi",
                               playerId == "397465" ~ "Malik Tillman",
@@ -61,7 +61,7 @@ optadata <- optadata %>%
                               playerId == "418590" ~ "Junior Chukwubuike Adamu",
                               playerId == "424367" ~ "Roko Simic",
                               playerId == "424368" ~ "Gabriel Vidovic",
-                              playerId == "424805" ~ "Maurits Kjærgaard",
+                              playerId == "424805" ~ "Maurits KjÃ¦rgaard",
                               playerId == "425220" ~ "Daouda Guindo",
                               playerId == "430703" ~ "Paul Wanner",
                               playerId == "432889" ~ "Samson Tijani"))
@@ -72,17 +72,3 @@ optadata <- optadata %>%
   rename(outcome = outcomeType.displayName) %>%
   rename(finalX = endX,
          finalY = endY)
-
-plot_passnet(eventData = optadata, dataType = "opta", team_name = "Bayern", theme = "dark")
-
-# StatsBomb
-
-dataframe <- FreeCompetitions() %>%
-  filter(competition_id == 11 & season_name == "2018/2019")
-df <- FreeMatches(dataframe)
-StatsBombData <- StatsBombFreeEvents(MatchesDF = df, Parallel = T)
-sbdata <- allclean(StatsBombData)
-
-# Save
-
-ggsave("test.png", bg = "#0d1117", width = 2400, height = 1900, units = "px")
